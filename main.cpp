@@ -435,7 +435,7 @@ int main() {
         cin >> password;
 
         if (bank.login(customerID, password)) {
-            if (customerID == "CLERK001") {
+            if (customerID == "CRK1") {
                 bank.displayClerkMenu();
             } else {
                 bank.displayCustomerMenu(customerID);
