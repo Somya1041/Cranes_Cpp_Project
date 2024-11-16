@@ -1,4 +1,3 @@
-// main.cpp
 #include <iostream>
 #include <string>
 #include <vector>
@@ -186,7 +185,7 @@ private:
 public:
     BankingSystem() : currentUserID(-1), nextUserID(1), nextAccountNumber(1000), nextTransactionID(1) {
         // Add default bank clerk
-        addUser("CLERK001", "admin123", 'A');
+        addUser("CRK1", "admin123", 'A');
     }
 
     bool login(string customerID, string password) {
@@ -265,6 +264,8 @@ public:
         }
         return false;
     }
+
+
 
     void displayCustomerDetails(string customerID) {
         for (const auto& customer : customers) {
