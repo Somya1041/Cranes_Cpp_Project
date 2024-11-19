@@ -8,14 +8,12 @@
 
 using namespace std;
 
-// Forward declarations
 class User;
 class Customer;
 class Account;
 class Transaction;
 class BankingSystem;
 
-// Utility functions
 string getCurrentDateTime() {
     time_t now = time(0);
     tm* ltm = localtime(&now);
@@ -24,7 +22,6 @@ string getCurrentDateTime() {
     return string(buffer);
 }
 
-// Class definitions
 class User {
 protected:
     int userID;
@@ -184,7 +181,6 @@ private:
 
 public:
     BankingSystem() : currentUserID(-1), nextUserID(1), nextAccountNumber(1000), nextTransactionID(1) {
-        // Add default bank clerk
         addUser("CRK1", "admin123", 'A');
     }
 
@@ -220,16 +216,13 @@ public:
                     string phone, string email, string pan) {
         string customerID = "CUST" + to_string(nextUserID);
         
-        // Add customer user
         addUser(customerID, "default123", 'U');
         
-        // Add customer details
         customers.emplace_back(customerID, name, type);
         Customer& cust = customers.back();
         cust.setAddress(address1, "", "", city, state, "Country", "");
         cust.setContactInfo(phone, email, pan);
         
-        // Create default savings account
         accounts.emplace_back(nextAccountNumber++, "Savings", customerID);
         
         return true;
@@ -254,7 +247,7 @@ public:
         } else if (type == 'T' && dstAccount) {
             if (srcAccount->debit(amount)) {
                 success = dstAccount->credit(amount);
-                if (!success) srcAccount->credit(amount); // Rollback if destination credit fails
+                if (!success) srcAccount->credit(amount);
             }
         }
 
@@ -264,8 +257,6 @@ public:
         }
         return false;
     }
-
-
 
     void displayCustomerDetails(string customerID) {
         for (const auto& customer : customers) {
@@ -289,7 +280,6 @@ public:
         }
     }
 
-    // Main menu functions
     void displayClerkMenu() {
         while (true) {
             cout << "\nBank Clerk Menu:" << endl;
