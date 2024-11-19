@@ -34,11 +34,11 @@ class BankAccount{
 		void withdraw(double amount){
 			if(balance >= amount){
 				balance = balance - amount;
-				cout<<"\t\tWithdraw Successfully..."<<endl;
+				cout << "\t\tWithdrawn Successfully!!!" << endl;
 			}
 			
 			else{
-				cout<<"\t\tInsufficient Balance...."<<endl;
+				cout << "\t\tInsufficient Balance!!!" << endl;
 			}
 		}	
 };
@@ -53,24 +53,25 @@ class BankManagement{
 
 		void showAllAccounts(){
 			cout << "\t\tAll Account Holders:- " << endl;
-			for(int i = 0; i<accounts.size(); i++){
-				cout << i + 1 << " Name: "<<accounts[i].getName() << " Account Number: "<< accounts[i].getAccountNum() <<
+			for(int i = 0; i < accounts.size(); i++){
+				cout << i + 1 << ". Name: " << accounts[i].getName() << " Account Number: "<< accounts[i].getAccountNum() <<
 				" Balance: " << accounts[i].getBalance() << endl;
 			}
 		}
 
 		void searchAccount(int account){
-			cout<<"\t\tAccount Holder "<<endl;
-			for(int i = 0; i<accounts.size();i++){
-				if(accounts[i].getAccountNum()==account){
-				cout<<"Name :"<<accounts[i].getName()<<" Account Number :"<<accounts[i].getAccountNum()<<" Balance :"<<accounts[i].getBalance()<<endl;	
+			cout << "\t\tAccount Holder " << endl;
+			for(int i = 0; i < accounts.size(); i++){
+				if(accounts[i].getAccountNum() == account){
+				cout << "Name: " << accounts[i].getName() << " Account Number: " <<accounts[i].getAccountNum() << 
+				" Balance: "<< accounts[i].getBalance() << endl;	
 				}
 			}
 		}
 
 		BankAccount* findAccount(int accountNum){
-			for(int i = 0; i<accounts.size();i++){
-				if(accounts[i].getAccountNum()==accountNum){
+			for(int i = 0; i < accounts.size(); i++){
+				if(accounts[i].getAccountNum() == accountNum){
 					return &accounts[i];
 				}
 			}
@@ -86,7 +87,7 @@ int main(){
 	do{
 		cout<<"\n\t\t::Bank Management System::\n"<<endl;
 		cout<<"\t\t\tMain Menu"<<endl;
-		cout<<"\t\t1. Creat New Account"<<endl;
+		cout<<"\t\t1. Create New Account"<<endl;
 		cout<<"\t\t2. Show All Account"<<endl;
 		cout<<"\t\t3. Search Account"<<endl;
 		cout<<"\t\t4. Deposit Money"<<endl;
@@ -169,7 +170,7 @@ int main(){
 			}
 		}
 
-	    cout<<"\t\tDo You Want to Continue or Exit [Yes/No]?: ";
+	    cout<<"\t\tDo You Want to Continue or Exit [Yes / No]?: ";
 	    cin>>op;
 		
 	}while(op == 'y'||op =='Y');
