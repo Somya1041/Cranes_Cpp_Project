@@ -145,7 +145,7 @@ int main(){
 					cout << "\t\tEnter Amount to be deposited: ";
 					cin >> amount;
 					account->deposit(amount);
-					cout << "\t\t" << amount << "Amount Deposited Successfully!!!\n" << endl;
+					cout << "\t\t" << amount << " Amount Deposited Successfully!!!\n" << endl;
 				}
 				
 				else{
@@ -166,7 +166,7 @@ int main(){
 					cout << "\t\tEnter Amount to be withdrawn: ";
 					cin >> amount;
 					account->withdraw(amount);
-					cout << "\t\t" << amount << "Amount Withdrawn Successfully!!!\n" << endl;
+					cout << "\t\t" << amount << " Amount Withdrawn Successfully!!!\n" << endl;
 				}
 				
 				else{
