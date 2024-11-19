@@ -60,10 +60,10 @@ class BankManagement{
 		}
 
 		void searchAccount(int account){
-			cout << "\t\tAccount Holder " << endl;
+			cout << "\t\tAccount Holder:- " << endl;
 			for(int i = 0; i < accounts.size(); i++){
 				if(accounts[i].getAccountNum() == account){
-				cout << "Name: " << accounts[i].getName() << " Account Number: " <<accounts[i].getAccountNum() << 
+				cout << "\t\t" << "Name: " << accounts[i].getName() << " Account Number: " <<accounts[i].getAccountNum() << 
 				" Balance: "<< accounts[i].getBalance() << endl;	
 				}
 			}
@@ -121,7 +121,7 @@ int main(){
 
 			case 3:{
 				int accountNum;
-				cout<<"Enter Account Number: ";
+				cout<<"\t\tEnter Account Number: ";
 				cin>>accountNum;
 				bank.searchAccount(accountNum);
 				break;
